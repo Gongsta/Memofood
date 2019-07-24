@@ -1,0 +1,669 @@
+   <html>
+       
+    <title>Memofood</title>   
+
+       <head>
+        <!-- icon -->
+        <link rel="icon" href = "Images/logo.ico">
+           
+        <!-- google font -->
+        <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet" type="text/css">
+        
+        <style>
+            
+            th, td {border-bottom: 1px solid #ddd;}
+            
+            * {box-sizing: border-box;}
+
+            body {
+              margin: 0;
+              font-family: Bellerose, Bellerose, Bellerose;
+              font-weight: lighter;
+            }
+            
+            p {
+                margin:0;
+                padding:0;
+                line-height: 0;
+            }
+
+            .topnav {
+              overflow: hidden;
+              background-color: white;
+            }
+
+            .topnav a {
+              float: left;
+              display: block;
+              color: black;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 20px;
+              font-family: Bellerose;
+              font-weight: lighter;
+            }
+
+            .topnav a:hover, .dropdown:hover, .dropbtn:hover {
+              background-color: #90EE90;
+              color: white;
+            }
+            
+            .dropbtn {
+              background-color: transparent;
+              color: black;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 20px;
+              font-family: Bellerose;
+              font-weight: lighter;
+            }
+
+            .topnav .search-container {
+              float: right;
+            }
+
+            .topnav input[type=text] {
+              padding: 6px;
+              margin-top: 8px;
+              font-size: 17px;
+              border: none;
+            }
+
+            .topnav .search-container button {
+              float: right;
+              padding: 6px 10px;
+              margin-top: 8px;
+              margin-right: 18px;
+              background: #ddd;
+              font-size: 20px;
+              font-family: Bellerose;
+              font-weight: lighter;
+              border: none;
+              cursor: pointer;
+            }
+
+            .topnav .search-container button:hover {
+              background: #ccc;
+            }
+            
+            .dropdown {
+              float: left;
+              overflow: hidden;
+            }
+            
+            .dropdown .dropbtn {
+              font-size: 16px;  
+              border: none;
+              outline: none;
+              padding: 14px 16px;
+              background-color: inherit;
+              font-size: 20px;
+              font-family: Bellerose;
+              font-weight: lighter;
+              margin: 0;
+            }
+            
+            .dropbtn2 {
+              font-size: 16px;  
+              border: none;
+              outline: none;
+              padding: 14px 16px;
+              font-family: Bellerose;
+              margin: 0;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+              float: none;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+            }
+            
+            .dropdown-content a:hover {
+              background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }
+
+            @media screen and (max-width: 600px) {
+              .topnav .search-container {
+                float: none;
+              }
+              .topnav a, .topnav input[type=text], .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+              }
+              .topnav input[type=text] {
+                border: 1px solid #ccc;  
+              }
+            }
+            
+            .profcard {
+              float: right;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              /*max-width: 300px;*/
+              margin: auto;
+              text-align: center;
+              font-family: Helvetica;
+              padding-left: 30px;
+              padding-right: 30px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              line-height: 0.5;
+              background-color: white;
+            }
+            
+            div.textbox {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .show {display:block;}
+            
+            * {box-sizing: border-box}
+            img {vertical-align: middle;}
+
+            /* Fading animation */
+            .fade {
+              -webkit-animation-name: fade;
+              -webkit-animation-duration: 1.5s;
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+
+            @keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+              .prev, .next,.text {font-size: 11px}
+            }
+
+            /* Loader animation  */
+            .drop {
+                background-color: transparent;
+                width: 1px;
+                height: 89px;
+                position: absolute;
+                bottom: 200px;
+                -webkit-animation: fall .63s linear infinite;
+                -moz-animation: fall .63s linear infinite;
+               }
+            
+            #loadertitle {
+                color: #87CEEB;
+                font-family: Bellerose;
+                font-size: 200px;
+                text-align: center;
+                margin-top: 250px;
+            }
+
+               @-webkit-keyframes fall { to {margin-top: 900px;}}
+               @-moz-keyframes fall { to {margin-top: 900px;}}
+
+            #myDiv {
+              display: none;
+              text-align: center;
+            }
+            
+            /* Add animation to "page content" */
+            .animate-bottom {
+              position: relative;
+              -webkit-animation-name: animatebottom;
+              -webkit-animation-duration: 1s;
+              animation-name: animatebottom;
+              animation-duration: 1s
+            }
+
+            @-webkit-keyframes animatebottom {
+              from { bottom:-100px; opacity:0 } 
+              to { bottom:0px; opacity:1 }
+            }
+
+            @keyframes animatebottom { 
+              from{ bottom:-100px; opacity:0 } 
+              to{ bottom:0; opacity:1 }
+            }
+            
+            body.dark-mode {
+              background-color: black;
+              color: white;
+            }
+            p.dark-mode {
+              color: white;
+            }
+            body.dark-mode button {
+              background-color: white;
+              color: black;
+            }
+
+            body.light-mode {
+              background-color: #F5F5F5;
+              color: black;
+            }
+            p.light-mode {
+              color: black;
+            }
+            body.light-mode button {
+              background-color: black;
+              color: white;
+            }
+
+        </style>
+    </head>
+
+    <body id="body" class="light-mode" onload="myFunction()">
+        
+        <div id="rain" class="rain"></div>
+        <div id="loadertitle"><img src="Images/logo.png" style="width: 200; height: 200;"></div>
+        
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+        
+            <!-- navbar -->
+            <div class="topnav">
+              <!--<a class="active" href="#menu"><img src="logo.png" style="width: 15; height: 20px;"></a>-->
+              <a href="home.html" class="dropbtn"><img src="Images/logo.png" style="width: 45; height: 45px;"></a> 
+
+            <!--<div class="dropdown" style="font-family: helvetica; ">
+              <button onclick="myFunction()" class="dropbtn" style="color: black;">Topics</button>
+              <div id="myDropdown" class="dropdown-content">
+                <a href="sports.html">Sports</a>
+                <a href="tech.html">Tech</a>
+                <a href="politics.html">Politics</a>
+                <a href="finance.html">Finance</a>
+              </div>
+            </div>-->
+
+                <a href="home.html" class="dropbtn">Home</a>
+
+                <a href="memo.html" class="dropbtn" style="background-color: #90EE90; color: white;">Your Memo</a>
+
+                <a href="points.html" class="dropbtn">Your Points</a>
+                
+                <a href="about.html" class="dropbtn">About Us</a>
+
+                <a href="faq.html" class="dropbtn">FAQ</a>
+                
+                
+
+                <div class="dropdown" style="font-family: helvetica; float: right;">
+                  <button onclick="myFunction()" class="dropbtn"><img id="myphoto" src="Images/user.png" style="width: 45; height: 45px;"></button>
+                    <div id="myDropdown" class="dropdown-content" style="position: absolute; left: 1140px; width: 300px; text-align: center;">
+                    <h1 style="color: #000; font-family: Bellerose; font-weight: bolder" id="namediv">User</h1>
+                    <a style="color: #90EE90; text-align: center;" id="myemail">guest1@gmail.com</a>
+                    <a id="mylevel" style="text-align: center;">Level: Beginner</a>
+                    <a id="mydroplets" style="text-align: center;">Points: 15</a>
+                    <p><button onclick="login()" style="float: left; margin-left: 50px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: Bellerose; font-size: 15px;">Log In</button></p>
+                    <p><button onclick="logout()" style="float: right; margin-right: 50px; margin-bottom: 10px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: Bellerose; font-size: 15px;">Log Out</button></p>
+                    </div>
+                </div>
+                
+                <!-- Dark/light toggle -->
+                <a name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode" style="float: right;"><img src="Images/sun2.png" width="45" height="45"></a>
+
+            </div>
+
+            <div id="board"></div>
+
+            <!-- title -->
+            <br><p style="text-align: center; margin-top: 20px; font-family: Bellerose; font-weight: bold; font-size: 100px;">Your <span style="color: #7CFC00">Me</span><span style="color: #006400">mo</span></p>
+            
+            <!-- Line -->
+            <svg height="100" width="500">
+              <line x1="125" y1="100" x2="350" y2="100" style="stroke:rgb(124,252,0); stroke-width:5" />
+            </svg>
+
+            <!-- Images -->
+            <br><br><img src="Images/blueberry.png"> <img src="Images/carrot.png" style="margin-top: 8;"> <img src="Images/sausage.png" style="margin-top: 8;">
+
+            <!-- Song
+            <iframe src="Wow.mp3" allow="autoplay" style="display: none" id="iframeAudio"></iframe> -->
+
+
+
+        <!--<div id="mytweets"></div>-->
+        <div id="mydata"></div>
+        <div id="myphoto"></div>
+    
+    </div>
+         
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+      // Initialize Firebase
+        
+        //Search filter
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        function bioinfo() {
+            document.getElementById("biopage").classList.toggle("show");
+        }
+        
+        function toggleDarkLight() {
+          var body = document.getElementById("body");
+          var currentClass = body.className;
+          body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
+        }
+
+        function filterFunction() {
+          var input, filter, ul, li, a, i;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          div = document.getElementById("myDropdown");
+          a = div.getElementsByTagName("a");
+          for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              a[i].style.display = "";
+            } else {
+              a[i].style.display = "none";
+            }
+          }
+        }
+        
+        //Loader code
+        var myVar;
+        var nbDrop = 800;
+   
+           function randRange(maxNum, minNum) {
+            return (Math.floor(Math.random(10) * (maxNum - minNum + 1)) + minNum);
+           }
+
+           function createRain() {
+            for (i = 0; i < nbDrop; i++) {
+
+             var dropLeft = randRange(0, 3000);
+             var dropTop = randRange(-1000, 1000);
+             $('.rain').append('<div class="drop" id="drop'+ i +'"></div>');
+             $('#drop' + i).css('left', dropLeft);
+             $('#drop' + i).css('top', dropTop); 
+            }
+           }
+
+        function stuff() {
+          myVar = setTimeout(showPage, 3000);
+        }
+        
+        function myFunction() {
+            createRain();
+            stuff();
+        }
+
+        function showPage() {
+          document.getElementById("rain").style.display = "none";
+          document.getElementById("loadertitle").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+        
+    var loadDate = "";
+    var droplets = 0;
+        
+    var config = {
+        apiKey: "AIzaSyBVOwlTeu_-jnXZp253XbfQEFi7a60rVKE",
+        authDomain: "droplet-34330.firebaseapp.com",
+        databaseURL: "https://droplet-34330.firebaseio.com",
+        projectId: "droplet-34330",
+        storageBucket: "droplet-34330.appspot.com",
+        messagingSenderId: "822727269402"
+      };
+      firebase.initializeApp(config);
+                
+        // Check to see if you are logged in
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user == null) {
+                //alert("Not logged in.");
+                return;
+            } else {
+                userId = user.uid;
+                name = user.displayName;
+                imageUrl = user.photoURL;
+                email = user.email;
+                
+                loadDate = new Date().toString();
+                    
+                // write user data to users
+                //writeUserData(userId, name, email, imageUrl);
+                // moved to tweet function
+                
+                // write data to document
+                mydiv = document.getElementById("mydata");
+                document.getElementById("namediv").innerHTML = name;
+                
+                myemaildiv = document.getElementById("myemail");
+                document.getElementById("myemail").innerHTML = email;
+                
+                myphotodiv = document.getElementById("myphoto");
+                myphotodiv.innerHTML = "<img src='" + imageUrl + "' style='position:absolute; left: 1300px; top: 72px; width: 75px; height: 75px;'/>";
+                
+                mydropdiv = document.getElementById("mydroplets");
+                document.getElementById("mydroplets").innerHTML = "Droplets: " + droplets;
+
+                firebase.database().ref('/tweets').once('value').then(function(snapshot) {
+                    var data = (snapshot.val());
+                    if (data == null) {
+                      console.log("No data found at /tweets/" + userId);  
+                    } else {
+                        
+                      firebase.database().ref('/users').once('value').then(function(snapshot) { 
+                        var userdata = (snapshot.val());
+                        if (userdata != null) {
+                           dataarray = [data,userdata]
+                           console.log(dataarray)
+                           updatetweets(dataarray); 
+                        }
+                      });
+                      //console.log(data)
+                      //updatetweets(data);
+                    }
+                });
+            } // end user null check
+        }); // end check auth state
+        
+        function encodeImageFileAsURL() {
+
+            var filesSelected = document.getElementById("inputFileToLoad").files;
+            if (filesSelected.length > 0) {
+                var fileToLoad = filesSelected[0];
+                var fileReader = new FileReader();
+                fileReader.onload = function(fileLoadedEvent) {
+                    var srcData = fileLoadedEvent.target.result; // <--- data: base64
+                    //var newImage = document.createElement('img');
+                    //newImage.src = srcData;
+                    //document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+                    document.getElementById("imgTest").innerHTML = srcData;
+                    //console.log("Converted Base64 version is: " + document.getElementById("imgTest").innerHTML);
+                    console.log(srcData);
+                }
+                fileReader.readAsDataURL(fileToLoad);
+            }
+        } // end function
+        
+        // write user data
+        function writeUserData(userId, name, email, imageUrl) {
+            firebase.database().ref('users/' + userId).once('value',    function(snapshot) {
+                 if (!snapshot.exists()) {
+                    firebase.database().ref('users/' + userId).set({
+                        username: name,
+                        email: email,
+                        profile_picture : imageUrl,
+                       
+                    }); 
+                 }                                      
+            });
+        }
+        
+        function updatetweets(data) {
+            //var mylist = "<ul>";
+            var mytab = "<br><br><br><table>";
+            users = data[1]; // put on top, because changed data - not good coding change later
+            data = data[0];
+            
+            for (var u in data) {
+                for (var t in data[u]) {
+                    mytab = mytab + "<tr>";
+                    //var date = timeSince(new Date(Date.now()));
+                    var date = new Date(data[u][t].time);
+                    var time = date.toString();
+                    if (time.substring(0,15) == loadDate.substring(0,15)) {
+                        if (time.substring(16,18) == loadDate.substring(16,18)) {
+                            var num1 = Number(loadDate.substring(19,21));
+                            var num2 = Number(time.substring(19,21));
+                            console.log(num1);
+                            var num3 = num1 - num2;
+                            time = num3.toString() + " minutes ago";
+                        } else {
+                            var num1 = Number(loadDate.substring(16,18));
+                            var num2 = Number(time.substring(16,18));
+                            var num3 = num1 - num2;
+                            if (num3 == 1) {
+                                var num1 = Number(loadDate.substring(19,21));
+                                var num2 = Number(time.substring(19,21));
+                                console.log(num1);
+                                var num3 = num1 - num2 + 60;
+                                if (num3 > 59) {
+                                    time = "1 hour ago"
+                                } else {
+                                    time = num3.toString() + " minutes ago";
+                                }
+                            } else {
+                                time = num3.toString() + " hours ago";
+                            }
+                        }
+                    } else {
+                        time = time.substring(4,15);
+                    }
+                    //If there is an image posted
+                    if (data[u][t].img != "") {
+                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'></td>";
+                        mytab = mytab + "<td>" + users[u].username + "</td>";
+                        mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
+                        mytab = mytab + "<td>" + time + "<br><img src='" + data[u][t].img + "' width='300px'></td>";
+                    } else {
+                        mytab = mytab + "<td><img src='" + users[u].profile_picture + "' width='50px'></td>";
+                        mytab = mytab + "<td>" + users[u].username + "</td>";
+                        mytab = mytab + "<td>" + data[u][t].tweet + "</td>";
+                        mytab = mytab + "<td>" + time + "</td>";
+                        
+                        
+                    } 
+                    mytab = mytab + "</tr>";
+                }   
+            }
+            //mylist = mylist + "</ul>";
+            mytab = mytab + "</table>"
+            var mytdiv = document.getElementById("mytweets");
+            //mytdiv.innerHTML = mylist;
+            mytdiv.innerHTML = mytab;
+        }
+        
+        // write tweets to firebase
+        function tweet() {
+            
+            //4-0
+            
+            loadDate = new Date().toString();
+            var twitdoc = document.getElementById("twit");
+            var twitimg = document.getElementById("imgTest");
+            var nameValue = twitdoc.value;
+            var imgValue = twitimg.innerHTML;
+            var js_time = Date.now();
+            var tweetid = firebase.database().ref('tweets/' + userId + "/").push({tweet: nameValue, time: js_time, img: imgValue});
+            twitdoc.value = "";
+            writeUserData(userId, name, email, imageUrl);
+            console.log("tweet written")
+            
+            firebase.database().ref('/tweets').once('value').then(function(snapshot) {
+                    var data = (snapshot.val());
+                    if (data == null) {
+                      console.log("No data found at /tweets/" + userId);  
+                    } else { 
+                        firebase.database().ref('/users').once('value').then(function(snapshot) { 
+                        var userdata = (snapshot.val());
+                        if (userdata != null) {
+                           dataarray = [data,userdata]
+                           console.log(dataarray)
+                           updatetweets(dataarray); 
+                        }
+                      });
+                    }
+                });
+            
+            
+            
+            // The unique key stored in tweetid is based on a timestamp, so list items will automatically be ordered chronologically. Because Firebase generates a unique key for each tweet, no write conflicts will occur if multiple users add a post at the same time. https://firebase.google.com/docs/database/admin/save-data
+            
+        }
+        
+        
+        
+        function login() {
+            console.log("Logging in");
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithRedirect(provider).then(function(result) { 
+                window.location.replace("home.html");
+            });
+        }
+        
+        function logout() {
+            console.log("Logging out");
+            firebase.auth().signOut().then(function() {
+            });
+        }
+        
+        function changename() {
+            console.log("Changing username");
+            //name = username;
+        }
+        
+        function like() {
+            //barca lost
+            alert("You liked Bob's Article! :)");
+            droplets = droplets + 5;
+            mydropdiv = document.getElementById("mydroplets");
+            document.getElementById("mydroplets").innerHTML = "Droplets: " + droplets;
+            
+        }
+    
+        function dislike() {
+            alert("You disliked Bob's Article :(");
+            droplets = droplets - 1;
+            mydropdiv = document.getElementById("mydroplets");
+            document.getElementById("mydroplets").innerHTML = "Droplets: " + droplets;
+        }
+        
+    </script>
+
+        
+    </body>
+ 
+</html>
