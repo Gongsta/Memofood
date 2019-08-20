@@ -1,0 +1,369 @@
+/* START - Text Styles */     
+    
+th, td {border-bottom: 1px solid #ddd;}
+            
+            * {box-sizing: border-box;}
+
+            body {
+              width: 100%;
+              height: 100%;
+              margin: 0;
+              font-family: IBM Plex Sans, IBM Plex Sans, IBM Plex Sans;
+              font-weight: lighter;
+            }
+            
+            p {
+                margin:0;
+                padding:0;
+                line-height: 0;
+            }
+
+            .topnav {
+              overflow: hidden;
+              background-color: #035300;
+              position: fixed;
+              top: 0;
+              z-index: 0;
+            }
+
+            .topnav a {
+              float: left;
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 26px;
+              padding-top: 30;
+              padding-bottom: 30;
+              text-decoration: none;
+              font-size: 17px;
+              font-family: IBM Plex Sans;
+              font-weight: lighter;
+              z-index: 0;
+            }
+            
+            .dropbtn {
+              display: block;
+              color: black;
+              text-align: center;
+              padding: 14px 26px;
+              padding-top: 30;
+              padding-bottom: 30;
+              text-decoration: none;
+              font-size: 17px;
+              font-family: IBM Plex Sans;
+              font-weight: lighter;
+            }
+
+            .topnav a:hover, .dropdown:hover {
+              /*background-color: #90EE90;
+              color: white;*/
+              
+            }
+            
+            .dropbtn:hover {
+                border-bottom: 5px solid #90EE90;
+            }
+
+            .topnav .search-container {
+              float: right;
+            }
+
+            .topnav input[type=text] {
+              padding: 6px;
+              margin-top: 8px;
+              font-size: 17px;
+              border: none;
+            }
+
+            .topnav .search-container button {
+              float: right;
+              padding: 6px 10px;
+              margin-top: 8px;
+              margin-right: 18px;
+              background: #ddd;
+              font-size: 20px;
+              font-family: IBM Plex Sans;
+              font-weight: lighter;
+              border: none;
+              cursor: pointer;
+            }
+
+            .topnav .search-container button:hover {
+              background: #ccc;
+            }
+            
+            .dropdown .dropbtn {
+              float: left;
+              display: block;
+              background-color: transparent;
+              color: black;
+              border: none;
+              text-align: center;
+              padding: 14px 26px;
+              padding-top: 30;
+              padding-bottom: 30;
+              text-decoration: none;
+              font-size: 17px;
+              font-family: IBM Plex Sans;
+              font-weight: lighter;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color: #f9f9f9;
+              min-width: 160px;
+              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+              float: none;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+            }
+            
+            .dropdown-content a:hover {
+              background-color: #ddd;
+            }
+
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }
+
+            @media screen and (max-width: 600px) {
+              .topnav .search-container {
+                float: none;
+              }
+              .topnav a, .topnav input[type=text], .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+              }
+              .topnav input[type=text] {
+                border: 1px solid #ccc;  
+              }
+            }
+
+            /* The Close Button */
+            .close {
+              color: #aaaaaa;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+              color: #000;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            
+            .profcard {
+              float: right;
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              /*max-width: 300px;*/
+              margin: auto;
+              text-align: center;
+              font-family: Helvetica;
+              padding-left: 30px;
+              padding-right: 30px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              line-height: 0.5;
+              background-color: white;
+            }
+            
+            div.textbox {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .show {display:block;}
+            
+            * {box-sizing: border-box}
+            .mySlides {display: none}
+            img {vertical-align: middle;}
+
+            /* Slideshow container */
+            .slideshow-container {
+              max-width: 80%;
+              max-height: 60%;
+              position: relative;
+              margin: auto;
+              z-index: -1; 
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+              cursor: pointer;
+              position: absolute;
+              top: 65%;
+              width: auto;
+              padding: 16px;
+              margin-top: -22px;
+              color: white;
+              font-family: IBM Plex Sans;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+            
+            .prev {
+              left: 0;
+              border-radius: 3px 0 0 3px;
+            }
+            
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+              background-color: rgba(0,0,0,0.8);
+            }
+
+            /* Caption text */
+            .text {
+              color: #f2f2f2;
+              font-size: 15px;
+              padding: 8px 12px;
+              position: absolute;
+              bottom: 8px;
+              width: 100%;
+              text-align: center;
+              font-family: IBM Plex Sans;
+              font-weight: 700;
+              font-size: 30;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+              color: #f2f2f2;
+              font-size: 12px;
+              padding: 8px 12px;
+              position: absolute;
+              top: 0;
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+              cursor: pointer;
+              height: 15px;
+              width: 15px;
+              margin: 0 2px;
+              background-color: #bbb;
+              border-radius: 50%;
+              display: inline-block;
+              transition: background-color 0.6s ease;
+            }
+
+            .active, .dot:hover {
+              background-color: #717171;
+            }
+
+            /* Fading animation */
+            .fade {
+              -webkit-animation-name: fade;
+              -webkit-animation-duration: 1.5s;
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+
+            @keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+
+            /* On smaller screens, decrease text size */
+            @media only screen and (max-width: 300px) {
+              .prev, .next,.text {font-size: 11px}
+            }
+
+            /* Loader animation  */
+            .drop {
+                background-color: transparent;
+                width: 1px;
+                height: 89px;
+                position: absolute;
+                bottom: 200px;
+                -webkit-animation: fall .63s linear infinite;
+                -moz-animation: fall .63s linear infinite;
+               }
+            
+            #loadertitle {
+                color: #87CEEB;
+                font-family: IBM Plex Sans;
+                font-size: 200px;
+                text-align: center;
+                margin-top: 250px;
+            }
+
+               @-webkit-keyframes fall { to {margin-top: 900px;}}
+               @-moz-keyframes fall { to {margin-top: 900px;}}
+
+            #myDiv {
+              display: none;
+              text-align: center;
+            }
+            
+            /* Add animation to "page content" */
+            .animate-bottom {
+              position: relative;
+              -webkit-animation-name: animatebottom;
+              -webkit-animation-duration: 1s;
+              animation-name: animatebottom;
+              animation-duration: 1s
+            }
+
+            @-webkit-keyframes animatebottom {
+              from { bottom:-100px; opacity:0 } 
+              to { bottom:0px; opacity:1 }
+            }
+
+            @keyframes animatebottom { 
+              from{ bottom:-100px; opacity:0 } 
+              to{ bottom:0; opacity:1 }
+            }
+            
+            /* Light/Dark Mode */
+            body.dark-mode {
+              background-color: #1C1C1C;
+              color: white;
+            }
+            p.dark-mode {
+              color: white;
+            }
+            body.dark-mode button {
+              background-color: white;
+              color: black;
+            }
+
+            body.light-mode {
+              background-color: #F5F5F5;
+              color: black;
+            }
+            p.light-mode {
+              color: black;
+            }
+            body.light-mode button {
+              background-color: black;
+              color: white;
+            }
+    
+/* END - Text Styles */ 

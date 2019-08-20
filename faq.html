@@ -2,280 +2,15 @@
        
     <title>Memofood</title>   
 
-       <head>
+    <head>
         <!-- icon -->
         <link rel="icon" href = "Images/logo.ico">
            
-        <!-- google font -->
-        <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet" type="text/css">
+        <!-- google font: IBM Sans Plex -->
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,300,400,500,600,700&display=swap" rel="stylesheet">
         
-        <style>
-            
-            th, td {border-bottom: 1px solid #ddd;}
-            
-            * {box-sizing: border-box;}
-
-            body {
-              margin: 0;
-              font-family: Bellerose, Bellerose, Bellerose;
-              font-weight: lighter;
-            }
-            
-            p {
-                margin:0;
-                padding:0;
-                line-height: 0;
-            }
-
-            .topnav {
-              overflow: hidden;
-              background-color: white;
-            }
-
-            .topnav a {
-              float: left;
-              display: block;
-              color: black;
-              text-align: center;
-              padding: 14px 16px;
-              text-decoration: none;
-              font-size: 20px;
-              font-family: Bellerose;
-              font-weight: lighter;
-            }
-
-            .topnav a:hover, .dropdown:hover, .dropbtn:hover {
-              background-color: #90EE90;
-              color: white;
-            }
-            
-            .dropbtn {
-              background-color: transparent;
-              color: black;
-              text-align: center;
-              padding: 14px 16px;
-              text-decoration: none;
-              font-size: 20px;
-              font-family: Bellerose;
-              font-weight: lighter;
-            }
-
-            .topnav .search-container {
-              float: right;
-            }
-
-            .topnav input[type=text] {
-              padding: 6px;
-              margin-top: 8px;
-              font-size: 17px;
-              border: none;
-            }
-
-            .topnav .search-container button {
-              float: right;
-              padding: 6px 10px;
-              margin-top: 8px;
-              margin-right: 18px;
-              background: #ddd;
-              font-size: 20px;
-              font-family: Bellerose;
-              font-weight: lighter;
-              border: none;
-              cursor: pointer;
-            }
-
-            .topnav .search-container button:hover {
-              background: #ccc;
-            }
-            
-            .dropdown {
-              float: left;
-              overflow: hidden;
-            }
-            
-            .dropdown .dropbtn {
-              font-size: 16px;  
-              border: none;
-              outline: none;
-              padding: 14px 16px;
-              background-color: inherit;
-              font-size: 20px;
-              font-family: Bellerose;
-              font-weight: lighter;
-              margin: 0;
-            }
-            
-            .dropbtn2 {
-              font-size: 16px;  
-              border: none;
-              outline: none;
-              padding: 14px 16px;
-              font-family: Bellerose;
-              margin: 0;
-            }
-            
-            .dropdown-content {
-              display: none;
-              position: absolute;
-              background-color: #f9f9f9;
-              min-width: 160px;
-              box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-              z-index: 1;
-            }
-            
-            .dropdown-content a {
-              float: none;
-              color: black;
-              padding: 12px 16px;
-              text-decoration: none;
-              display: block;
-              text-align: left;
-            }
-            
-            .dropdown-content a:hover {
-              background-color: #ddd;
-            }
-
-            .dropdown:hover .dropdown-content {
-              display: block;
-            }
-
-            @media screen and (max-width: 600px) {
-              .topnav .search-container {
-                float: none;
-              }
-              .topnav a, .topnav input[type=text], .topnav .search-container button {
-                float: none;
-                display: block;
-                text-align: left;
-                width: 100%;
-                margin: 0;
-                padding: 14px;
-              }
-              .topnav input[type=text] {
-                border: 1px solid #ccc;  
-              }
-            }
-            
-            .profcard {
-              float: right;
-              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-              /*max-width: 300px;*/
-              margin: auto;
-              text-align: center;
-              font-family: Helvetica;
-              padding-left: 30px;
-              padding-right: 30px;
-              padding-top: 10px;
-              padding-bottom: 10px;
-              line-height: 0.5;
-              background-color: white;
-            }
-            
-            div.textbox {
-                display: flex;
-                justify-content: center;
-            }
-            
-            .show {display:block;}
-            
-            * {box-sizing: border-box}
-            img {vertical-align: middle;}
-
-            /* Fading animation */
-            .fade {
-              -webkit-animation-name: fade;
-              -webkit-animation-duration: 1.5s;
-              animation-name: fade;
-              animation-duration: 1.5s;
-            }
-
-            @-webkit-keyframes fade {
-              from {opacity: .4} 
-              to {opacity: 1}
-            }
-
-            @keyframes fade {
-              from {opacity: .4} 
-              to {opacity: 1}
-            }
-
-            /* On smaller screens, decrease text size */
-            @media only screen and (max-width: 300px) {
-              .prev, .next,.text {font-size: 11px}
-            }
-
-            /* Loader animation  */
-            .drop {
-                background-color: transparent;
-                width: 1px;
-                height: 89px;
-                position: absolute;
-                bottom: 200px;
-                -webkit-animation: fall .63s linear infinite;
-                -moz-animation: fall .63s linear infinite;
-               }
-            
-            #loadertitle {
-                color: #87CEEB;
-                font-family: Bellerose;
-                font-size: 200px;
-                text-align: center;
-                margin-top: 250px;
-            }
-
-               @-webkit-keyframes fall { to {margin-top: 900px;}}
-               @-moz-keyframes fall { to {margin-top: 900px;}}
-
-            #myDiv {
-              display: none;
-              text-align: center;
-            }
-            
-            /* Add animation to "page content" */
-            .animate-bottom {
-              position: relative;
-              -webkit-animation-name: animatebottom;
-              -webkit-animation-duration: 1s;
-              animation-name: animatebottom;
-              animation-duration: 1s
-            }
-
-            @-webkit-keyframes animatebottom {
-              from { bottom:-100px; opacity:0 } 
-              to { bottom:0px; opacity:1 }
-            }
-
-            @keyframes animatebottom { 
-              from{ bottom:-100px; opacity:0 } 
-              to{ bottom:0; opacity:1 }
-            }
-            
-            body.dark-mode {
-              background-color: black;
-              color: white;
-            }
-            p.dark-mode {
-              color: white;
-            }
-            body.dark-mode button {
-              background-color: white;
-              color: black;
-            }
-
-            body.light-mode {
-              background-color: #F5F5F5;
-              color: black;
-            }
-            p.light-mode {
-              color: black;
-            }
-            body.light-mode button {
-              background-color: black;
-              color: white;
-            }
-
-        </style>
+        <!-- stylesheet -->
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
     </head>
 
     <body id="body" class="light-mode" onload="myFunction()">
@@ -286,90 +21,75 @@
         <div style="display:none;" id="myDiv" class="animate-bottom">
         
             <!-- navbar -->
-            <div class="topnav">
+            <div class="topnav" style="width: 100%;">
               <!--<a class="active" href="#menu"><img src="logo.png" style="width: 15; height: 20px;"></a>-->
-              <a href="home.html" class="dropbtn"><img src="Images/logo.png" style="width: 45; height: 45px;"></a> 
+              <a href="home.html"><img src="Images/logo.png" style="width: 22; height: 22;" style="float: left;"></a> 
 
-            <!--<div class="dropdown" style="font-family: helvetica; ">
-              <button onclick="myFunction()" class="dropbtn" style="color: black;">Topics</button>
-              <div id="myDropdown" class="dropdown-content">
-                <a href="sports.html">Sports</a>
-                <a href="tech.html">Tech</a>
-                <a href="politics.html">Politics</a>
-                <a href="finance.html">Finance</a>
-              </div>
-            </div>-->
+                <a href="home.html" class="dropbtn" style="float: left;">Home</a>
 
-                <a href="home.html" class="dropbtn">Home</a>
+                <a href="memo.html" class="dropbtn" style="float: left;">Your Memo</a>
 
-                <a href="memo.html" class="dropbtn">Your Memo</a>
-
-                <a href="points.html" class="dropbtn">Your Points</a>
+                <a href="points.html" class="dropbtn" style="float: left;">Your Points</a>
                 
-                <a href="about.html" class="dropbtn">About Us</a>
+                <a href="about.html" class="dropbtn" style="float: left;">About Us</a>
 
-                <a href="faq.html" class="dropbtn" style="background-color: #90EE90; color: white;">FAQ</a>
+                <a href="faq.html" class="dropbtn" style="border-bottom: 5px solid #90EE90; float: left;">FAQ</a>
                 
-                
+                <!--<a href="account.html" target="_blank" style="float: right; cursor: pointer;"><img id="myphoto" src="Images/user.png" style="width: 35; height: 35px;"></a>-->
 
-                <div class="dropdown" style="font-family: helvetica; float: right;">
-                  <button onclick="myFunction()" class="dropbtn"><img id="myphoto" src="Images/user.png" style="width: 45; height: 45px;"></button>
-                    <div id="myDropdown" class="dropdown-content" style="position: absolute; left: 1140px; width: 300px; text-align: center;">
-                    <h1 style="color: #000; font-family: Bellerose; font-weight: bolder" id="namediv">User</h1>
-                    <a style="color: #90EE90; text-align: center;" id="myemail">guest1@gmail.com</a>
-                    <a id="mylevel" style="text-align: center;">Level: Beginner</a>
-                    <a id="mydroplets" style="text-align: center;">Points: 15</a>
-                    <p><button onclick="login()" style="float: left; margin-left: 50px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: Bellerose; font-size: 15px;">Log In</button></p>
-                    <p><button onclick="logout()" style="float: right; margin-right: 50px; margin-bottom: 10px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: Bellerose; font-size: 15px;">Log Out</button></p>
+                <div class="dropdown" style="float: right;">
+                  <button onclick="myFunction()" class="dropbtn"><img id="myphoto" src="Images/user.png" style="width: 35; height: 35px;"></button>
+                    <div id="myDropdown" class="dropdown-content" style="position: fixed; left: 80%; top: 11.5%; width: 300px; text-align: center;">
+                        <h1 style="color: #000; font-family: IBM Plex Sans; font-weight: bolder;" id="namediv">User</h1>
+                        <a style="color: #90EE90; text-align: center;" id="myemail">guest1@gmail.com</a>
+                        <a id="mylevel" style="text-align: center;">Level: Beginner</a>
+                        <a id="mydroplets" style="text-align: center;">Points: 15</a>
+                        <p><button onclick="login()" style="float: left; margin-left: 50px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: IBM Plex Sans; font-size: 15px;">Log In</button></p>
+                        <p><button onclick="logout()" style="float: right; margin-right: 50px; margin-bottom: 10px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: IBM Plex Sans; font-size: 15px;">Log Out</button></p>
                     </div>
                 </div>
                 
                 <!-- Dark/light toggle -->
-                <a name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode" style="float: right;"><img src="Images/sun2.png" width="45" height="45"></a>
+                <a name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode" style="float: right;"><img src="Images/sun.png" width="25" height="25"></a>
 
             </div>
+
 
             <div id="board"></div>
         
                 
-        <!-- title -->
-        <br><p style="text-align: center; margin-top: 20px; font-family: Bellerose; font-weight: bold; font-size: 100px;">F<span style="color: #7CFC00">A</span><span style="color: #006400">Q</span></p>
+        <!-- Background -->
+        <img src="Images/background5.png" style="width: 100%;">
             
-        <!-- Line -->
-        <svg height="100" width="500">
-        <line x1="155" y1="100" x2="350" y2="100" style="stroke:rgb(124,252,0); stroke-width:5" />
-        </svg><br><br>
-        
-       
-        <div style="background-color: #7CFC00; text-align: center; float: center; margin-left: 120; margin-right: 120;"><br>
-            <p style="color: white; font-weight: bold; font-size: 100px; height: 20px;">Why'd you make this app?</p><br><br>
-            <p style="color: white; font-weight: lighter; font-size: 25px; margin-left: 225; margin-right: 220; text-align: center; line-height: 40px;">Who knows.</p><br>
+        <div style="height: 40%;">
+                <p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">Why'd you make <span style="color: #7CFC00">this </span><span style="color: #006400">app?</span></p>
+                <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: center; text-align-last: center; line-height: 1.8; margin-left: 175; margin-right: 175;">We made the Memofood app because we want to bridge the gap between people and their products, make a difference and reduce food waste in Canada.</p><br><br>
         </div>
-        <br><br><br>
-        
-        <div style="background-color: #7CFC00; text-align: center; float: center; margin-left: 120; margin-right: 120;"><br>
-            <p style="color: white; font-weight: bold; font-size: 100px; height: 20px;">What's does your app do?</p><br><br>
-            <p style="color: white; font-weight: lighter; font-size: 25px; margin-left: 225; margin-right: 220; text-align: center; line-height: 40px;">Yes.</p><br>
+            
+        <div style="background-color: lightgray; height: 70%;">
+                <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">How does your <span style="color: #7CFC00">app </span><span style="color: #006400">work?</span></p>
+                <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: right; margin-left: 175; margin-right: 175;">We  partner with supermarkets using a simple step-by-step solution where food items that are scanned by cashiers will be automatically synced to your Memofood account, providing you with information about the product’s name, date and location of production, nutrition facts, its disposal procedure and most importantly its expiration date. This way, when food items approach its expiry date, you will be reminded through the Memofood application using notifications to consume the product.</p>
         </div>
-        <br><br><br>
-        
-        <div style="background-color: #7CFC00; text-align: center; float: center; margin-left: 120; margin-right: 120;"><br>
-            <p style="color: white; font-weight: bold; font-size: 100px; height: 20px;">How can we thank you?</p><br><br>
-            <p style="color: white; font-weight: lighter; font-size: 25px; margin-left: 225; margin-right: 220; text-align: center; line-height: 40px;">We accept sacrifices in the form of $100 bills.</p><br>
+            
+        <div style="height: 70%;">
+                <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">Why <span style="color: #7CFC00">Memo</span><span style="color: #006400">food?</span></p>
+                <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: right; margin-left: 175; margin-right: 175;">First of all, our app is user friendly. With simply a click of a few buttons, you will find that Memofood is extremely straightforward and easy to navigate. Secondly, Memofood reminds you what you already have at home, preventing you to buy excess food. Thirdly, our application takes a holistic approach at tackling food waste.
+            We understand that while many people are environmentally conscious, studies show that when people have the choice between saving the environment and saving money, most will choose the latter. We are redefining what helping the environment means. With this app, you can save both money and the environment. </p>
         </div>
-        <br><br><br>
-        
-        <div style="background-color: #7CFC00; text-align: center; float: center; margin-left: 120; margin-right: 120;"><br>
-            <p style="color: white; font-weight: bold; font-size: 100px; height: 20px;">Did Kawhi - </p><br><br>
-            <p style="color: white; font-weight: lighter; font-size: 25px; margin-left: 225; margin-right: 220; text-align: center; line-height: 40px;">Make the wrong choice? Yes. He chose the wrong LA team.</p><br>
-        </div>
-        <br><br><br>      
+            
+        <!-- Follow + Copyright -->
+        <div style="background-color: #023400; height: 20%;"><br style="margin: 100 0;">
+                <!-- Title + Buttons -->
+                <p style="text-align: center; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; color: white; line-height: 1;">FOLLOW <span style="color: #7CFC00">US </span><a href="https://www.linkedin.com/company/memofood/about/" target="_blank"><img src="Images/linkedin.png" style="width: 50; height: 50;" hspace="20;"></a><a href="https://www.instagram.com/memofoodcanada" target="_blank"><img src="Images/instagram.png" style="width: 50; height: 50;"></a></p><br><br>
+                
+                <p style="color: white;">Copyright &copy; 2019 <span style="font-weight: 700">MEMOFOOD</span>. All Rights Reserved.</p>
+        </div>     
 
     
     <div id="mytweets"></div>
     <div id="mydata"></div>
     <div id="myphoto"></div>
-        </div>
+    </div>
      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>

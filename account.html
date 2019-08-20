@@ -1,0 +1,126 @@
+   <html>
+       
+    <title>Memofood</title>   
+
+    <head>
+        <!-- icon -->
+        <link rel="icon" href = "Images/logo.ico">
+           
+        <!-- google font: IBM Sans Plex -->
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,300,400,500,600,700&display=swap" rel="stylesheet">
+           
+        <!-- stylesheet -->
+        <link href="stylesheet.css" rel="stylesheet" type="text/css">
+        
+    </head>
+
+    <body id="body" class="light-mode" onload="myFunction()">
+        
+        <div id="rain" class="rain"></div>
+        <div id="loadertitle"><img src="Images/logo.png" style="width: 200; height: 200;"></div>
+        
+        <div style="display:none;" id="myDiv" class="animate-bottom">
+        
+            <!-- navbar -->
+            <div class="topnav" style="width: 100%;">
+              <!--<a class="active" href="#menu"><img src="logo.png" style="width: 15; height: 20px;"></a>-->
+              <a href="home.html"><img src="Images/logo.png" style="width: 22; height: 22;" style="float: left;"></a>
+
+                <a href="home.html" class="dropbtn" style="border-bottom: 5px solid #90EE90; float: left;">Home</a>
+
+                <a href="memo.html" class="dropbtn" style="float: left;">Your Memo</a>
+
+                <a href="points.html" class="dropbtn" style="float: left;">Your Points</a>
+                
+                <a href="about.html" class="dropbtn" style="float: left;">About Us</a>
+
+                <a href="faq.html" class="dropbtn" style="float: left;">FAQ</a>
+                
+                <a href="account.html" target="_blank" style="float: right; cursor: pointer;"><img id="myphoto" src="Images/user.png" style="width: 35; height: 35px;"></a>
+
+                <div class="dropdown" style="float: right;">
+                  <button onclick="myFunction()" class="dropbtn"><img id="myphoto" src="Images/user.png" style="width: 35; height: 35px;"></button>
+                    <div id="myDropdown" class="dropdown-content" style="position: fixed; left: 80%; width: 300px; text-align: center;">
+                        <h1 style="color: #000; font-family: IBM Plex Sans; font-weight: bolder;" id="namediv">User</h1>
+                        <a style="color: #90EE90; text-align: center;" id="myemail">guest1@gmail.com</a>
+                        <a id="mylevel" style="text-align: center;">Level: Beginner</a>
+                        <a id="mydroplets" style="text-align: center;">Points: 15</a>
+                        <p><button onclick="login()" style="float: left; margin-left: 50px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: IBM Plex Sans; font-size: 15px;">Log In</button></p>
+                        <p><button onclick="logout()" style="float: right; margin-right: 50px; margin-bottom: 10px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: IBM Plex Sans; font-size: 15px;">Log Out</button></p>
+                    </div>
+                </div>
+                
+                <!-- Dark/light toggle -->
+                <a name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode" style="float: right; cursor: pointer;"><img src="Images/sun.png" width="25" height="25"></a>
+
+            </div>
+
+            <div id="board"></div>
+
+            <!-- Home -->
+            <img src="Images/background.png" style="width: 100%;">
+            
+            <!-- Problem + Solution -->
+            <div style="height: 40%;">
+                <p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">THE <span style="color: #7CFC00">PROB</span><span style="color: #006400">LEM</span></p>
+                <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: left; margin-left: 175; margin-right: 175;">In Canada, we waste over 2.2 million tonnes of edible food anually. A central part of that problem is that consumers often confuse food labels or simply forget the expiry date of certain items, leading to unneccessary waste. This food waste ends up costing Canadians an incredible 17 billion dollars every year.</p><br><br>
+            </div>
+            
+            <div style="background-color: lightgray; height: 55%;">
+                <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">THE <span style="color: #7CFC00">SOLU</span><span style="color: #006400">TION</span></p>
+                <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: right; margin-left: 175; margin-right: 175;">Memofood aims to solve this problem by partnering with supermarkets to provide users with their products' expiration dates, which will be automatically synced to their Memofood account. This way, when items approach their expiration dates, users will be reminded by the Memofood app by notifications to consume their product.</p>
+            </div>
+            
+            <!-- Healthy Tips -->
+            <div>
+                <p style="text-align: center; margin-top: 50px; font-family: IBM Plex Sans; font-weight: 300; font-size: 50px; line-height: 1;">HEALTHY <span style="color: #7CFC00">TI</span><span style="color: #006400">PS</span></p>
+            
+                <!-- slideshow -->
+                <div class="slideshow-container" style="margin-top: 50;">
+
+                    <div class="mySlides fade">
+                      <img src="Images/orange.png" style="width:100%;">
+                    </div>
+
+                    <div class="mySlides fade">
+                      <img src="Images/apple.png" style="width:100%;">
+                    </div>
+
+                    <div class="mySlides fade">
+                      <img src="Images/broccoli.png" style="width:100%;">
+                    </div>
+
+                    <div class="mySlides fade">
+                      <img src="Images/breakfast.png" style="width:100%;">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            </div>
+
+            <!-- Mission Statement -->
+            <div style="background-color: lightgray; height: 55%;">
+                <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">OUR <span style="color: #7CFC00">MISSION </span><span style="color: #006400">STATEMENT</span></p>
+                <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: left; margin-left: 175; margin-right: 175;">Our mission is to bridge the gap between people and their products. Our mission is to reduce food waste in Canada. Our mission is to make the world a better place for everyone.</p>
+            </div>
+
+            <!-- Follow + Copyright -->
+            <div style="background-color: #023400; height: 20%;"><br style="margin: 100 0;">
+                <!-- Title + Buttons -->
+                <p style="text-align: center; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; color: white; line-height: 1;">FOLLOW <span style="color: #7CFC00">US </span><a href="https://www.linkedin.com/company/memofood/about/" target="_blank"><img src="Images/linkedin.png" style="width: 50; height: 50;" hspace="20;"></a><a href="https://www.instagram.com/memofoodcanada" target="_blank"><img src="Images/instagram.png" style="width: 50; height: 50;"></a></p><br><br>
+                
+                <p style="color: white;">Copyright &copy; 2019 <span style="font-weight: 700">MEMOFOOD</span>. All Rights Reserved.</p>
+            </div>
+
+        <div id="mytweets"></div>
+        <div id="mydata"></div>
+        <div id="myphoto"></div>
+    
+        </div>
+        
+    </body>
+ 
+</html>
