@@ -119,6 +119,18 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script>
+        /***** TRANSITIONING TOPNAV COLOR *****/
+        window.onscroll = function() {scrollFunction()};  
+            
+        function scrollFunction() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            document.getElementsByClassName('topnav')[0].style.backgroundColor = "#035300";
+            document.getElementsByClassName('topnav')[0].style.boxShadow = "0px 8px 16px 0px rgba(0,0,0,0.2)";
+          } else {
+            document.getElementsByClassName('topnav')[0].style.backgroundColor = "transparent";
+          }
+        }
+        
       // Initialize Firebase
         
         //Search filter
