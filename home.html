@@ -19,7 +19,7 @@
         <div id="rain" class="rain"></div>
         <div id="loadertitle"><img src="Images/logo.png" style="width: 200; height: 200;"></div>
         
-        <div style="display:none;" id="myDiv" class="animate-bottom">
+        <div id="myDiv" class="animate-bottom">
         
             <!-- navbar -->
             <div class="topnav" style="width: 100%;">
@@ -61,14 +61,19 @@
             <img src="Images/background.png" style="width: 100%;">
             
             <!-- Problem + Solution -->
-            <div style="height: 40%;">
-                <p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">THE <span style="color: #7CFC00">PROB</span><span style="color: #006400">LEM</span></p>
+            <div style="background-color: lightgray; height: 55%;">
+                <br><br><br><br><br><p style="text-align: center; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">THE <span style="color: #7CFC00">PROB</span><span style="color: #006400">LEM</span></p>
                 <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: left; margin-left: 175; margin-right: 175;">In Canada, we waste over 2.2 million tonnes of edible food anually. A central part of that problem is that consumers often confuse food labels or simply forget the expiry date of certain items, leading to unneccessary waste. This food waste ends up costing Canadians an incredible 17 billion dollars every year.</p><br><br>
             </div>
             
-            <div style="background-color: lightgray; height: 55%;">
-                <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">OUR <span style="color: #7CFC00">SOLU</span><span style="color: #006400">TION</span></p>
+            <div style="height: 55%;">
+                <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">THE <span style="color: #7CFC00">SOLU</span><span style="color: #006400">TION</span></p>
                 <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: right; margin-left: 175; margin-right: 175;">Memofood aims to solve this problem by partnering with supermarkets to provide users with their products' expiration dates, which will be automatically synced to their Memofood account. This way, when items approach their expiration dates, users will be reminded by the Memofood app by notifications to consume their product.</p>
+            </div>
+            
+            <div style="background-color: lightgray; height: 55%;">
+                <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">WHY <span style="color: #7CFC00">IT </span><span style="color: #006400">WORKS</span></p>
+                <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: right; margin-left: 175; margin-right: 175;">Our app takes a holistic approach at tackling food waste. We understand that while many people are environmentally conscious, when people have the choice between saving the environment and saving money, most will choose the latter. We are redefining this dilemna; with the Memofood app, people can save both money and the environment.</p>
             </div>
             
             <!-- Healthy Tips -->
@@ -106,6 +111,25 @@
                 <br><p style="text-align: center; margin-top: 100px; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">OUR <span style="color: #7CFC00">MISSION </span><span style="color: #006400">STATEMENT</span></p>
                 <p style="margin-top: 50px; font-family: IBM Plex Sans; font-weight: 200; font-size: 17px; text-align: justify; text-align-last: center; line-height: 1.8; float: left; margin-left: 175; margin-right: 175;">Our mission is to bridge the gap between people and their products. Our mission is to reduce food waste in Canada. Our mission is to make the world a better place for everyone.</p>
             </div>
+            
+            <!-- Contact Form -->
+            <div>
+                <br>
+                    <!-- Title -->
+                    <br><p style="text-align: center; margin-top: 100px; margin-bottom: 50; font-family: IBM Plex Sans; font-weight: 300; font-size: 30px; line-height: 1;">INTERESTED? <span style="color: #7CFC00">CONTACT </span><span style="color: #006400">US!</span></p>
+
+                    <!-- Contact form -->
+                    <div class="contact">
+                        <form action="mailto:odosa@memofood.ca" method="post" enctype="text/plain">
+                            <input type="text" id="name" name="name" placeholder="Your name...">
+                            <input type="text" id="email" name="email" placeholder="Your email...">
+                            <input type="text" id="email" name="email" placeholder="Your subject...">
+                            <textarea id="message" name="mesage" placeholder="Your Message..." style="height:200px;"></textarea>
+                            <center><input type="submit" value="Send Message"></center>
+                        </form>
+                    </div>
+                    <br><br><br><br><br> 
+            </div>
 
             <!-- Follow + Copyright -->
             <div style="background-color: #023400; height: 20%;"><br style="margin: 100 0;">
@@ -137,6 +161,7 @@
             document.getElementsByClassName('topnav')[0].style.boxShadow = "0px 8px 16px 0px rgba(0,0,0,0.2)";
           } else {
             document.getElementsByClassName('topnav')[0].style.backgroundColor = "transparent";
+            document.getElementsByClassName('topnav')[0].style.boxShadow = "";
           }
         }
         
