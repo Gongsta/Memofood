@@ -40,10 +40,10 @@
                 <div class="dropdown" style="float: right;">
                   <button onclick="myFunction()" class="dropbtn"><img id="myphoto" src="Images/user.png" style="width: 35; height: 35px;"></button>
                     <div id="myDropdown" class="dropdown-content" style="position: fixed; left: 80%; top: 11.5%; width: 300px; text-align: center;">
-                        <h1 style="color: #000; font-family: IBM Plex Sans; font-weight: bolder;" id="namediv">User</h1>
+                        <h1 style="color: #000; font-family: IBM Plex Sans; font-weight: bolder;" id="namediv">Guest</h1>
                         <a style="color: #90EE90; text-align: center;" id="myemail">guest1@gmail.com</a>
                         <a id="mylevel" style="text-align: center;">Level: Beginner</a>
-                        <a id="mydroplets" style="text-align: center;">Points: 15</a>
+                        <a id="mydroplets" style="text-align: center;">Points: 0</a>
                         <p><button onclick="login()" style="float: left; margin-left: 50px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: IBM Plex Sans; font-size: 15px;">Log In</button></p>
                         <p><button onclick="logout()" style="float: right; margin-right: 50px; margin-bottom: 10px; width: 70px; height: 40px; cursor: pointer; background: #90EE90; color: #fff; font-family: IBM Plex Sans; font-size: 15px;">Log Out</button></p>
                     </div>
@@ -104,6 +104,7 @@
             document.getElementsByClassName('topnav')[0].style.boxShadow = "0px 8px 16px 0px rgba(0,0,0,0.2)";
           } else {
             document.getElementsByClassName('topnav')[0].style.backgroundColor = "transparent";
+            document.getElementsByClassName('topnav')[0].style.boxShadow = "";
           }
         }
     

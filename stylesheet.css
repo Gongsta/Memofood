@@ -22,7 +22,7 @@ th, td {border-bottom: 1px solid #ddd;}
               overflow: hidden;
               position: fixed;
               top: 0;
-              z-index: 0;
+              z-index: 2;
             }
 
             .topnav a {
@@ -37,7 +37,7 @@ th, td {border-bottom: 1px solid #ddd;}
               font-size: 17px;
               font-family: IBM Plex Sans;
               font-weight: lighter;
-              z-index: 0;
+              z-index: 2;
             }
             
             .dropbtn {
