@@ -197,7 +197,7 @@ th, td {border-bottom: 1px solid #ddd;}
               max-height: 60%;
               position: relative;
               margin: auto;
-              z-index: -1; 
+              z-index: 0; 
             }
 
             /* Next & previous buttons */
